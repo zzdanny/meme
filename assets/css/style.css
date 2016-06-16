@@ -108,19 +108,21 @@ section.gray {
 iframe, embed, object {
 	border:none;
 }
-
-.video-container,.map-container,.embed-container 	{ position:relative; margin:0 0 15px 0;	padding-bottom:51%; padding-top:30px; height:0; overflow:hidden; border:1px solid #ccc; }
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 100; overflow: hidden;
+}
+ 
 .video-container iframe,
-.embed-container iframe,
-.map-container iframe,
-.map-container object,
-.map-container embed,
-.embed-container object,
-.embed-container embed,
-.video-container object,  
-.video-container embed 					{ position:absolute; top:0; left:0; width:100%; height:100%; }
-
-
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 24%;
+    width: 50%;
+    height: 50%;
+}
 blockquote {
   display: inline-block;
   padding-left: 18px;
