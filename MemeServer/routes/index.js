@@ -19,6 +19,10 @@ var MatchSchema = new Schema({
 MatchSchema.plugin(timestamps);
 var Match = mongoose.model('Match', MatchSchema);
 
+router.get('/zodiac', function(req, res, next) {
+	res.redirect('/');
+});
+
 router.post('/zodiac', function(req, res, next) {
 	var boyName = req.body.boyName;
 	var girlName = req.body.girlName;
