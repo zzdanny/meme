@@ -1,6 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var timestamps = require('mongoose-timestamp');
+var graph = require('fbgraph');
+var passport = require('passport');
 
 var router = express.Router();
 var Schema = mongoose.Schema;
@@ -19,7 +21,12 @@ MatchSchema.plugin(timestamps);
 var Match = mongoose.model('Match', MatchSchema);
 
 router.post('/zodiac', function(req, res, next) {
-	if (req.body.boyName != undefined || req.body.girlName == undefined) {
+	var boyName = req.body.boyName;
+	var girlName = req.body.girlName;
+	var b = req.body.b;
+	var g = req.body.g;
+
+	if (boyName != "" && girlName != "") {
 		var match = new Match({
 			boyName: req.body.boyName,
 			girlName: req.body.girlName
@@ -33,20 +40,45 @@ router.post('/zodiac', function(req, res, next) {
 			}
 		});
 	}
+	if (b == "" || g == "" || boyName == "" || girlName == "") {
+		res.render('index');
+	} else {
+		var z = String(b) + String(g);
+		var string = zodiac[z].split('注意事項：')
 
-	if (req.body.b == undefined || req.body.b == undefined) {
-		res.render('index', {
-			error: 'bad request'
+		string[0] = string[0].replace('解析：', '')
+
+		graph.setAccessToken("EAAKi0ZAgHWDIBAO3FLOabI4tytiYKeZCCVmARolMqGtmcZBZA6pAiAMmPtNRTbHG7q0ysIKgp1usPwesaOVgmfrhrKR6c9aEzQZAzuCGfZBHvwocgcrjXlIZBYx3BWNWu0XObxbYrAvhJZBebj0DRUwInlloqOxp5bsZD");
+		var wallPost = {
+			message: "齁～～～～\n" + boyName + "愛" + girlName + "\n男生愛女生，羞羞臉！！\n子晏製作，萬用無窮！！\n快來陷害別人吧！！\nMeme產生器：http://www.memegirl.date"
+		};
+		graph.get("/me/accounts", wallPost, function(err, res) {
+			if (err) {
+				console.log(err);
+				return;
+			}
+
+			for (var i = 0; i < res.data.length; ++i) {
+				if (res.data[i].id === "396609957199539") {
+					graph.setAccessToken(res.data[i].access_token);
+					graph.post("/396609957199539/feed", wallPost, function(err, res) {
+						if (err) {
+							console.log(err);
+							return;
+						}
+
+						// returns the post id
+						console.log("https://www.facebook.com/" + res.id); // { id: xxxxx}
+					});
+				}
+			}
+		});
+
+		res.render('zodiac', {
+			resolve: string[0],
+			notice: string[1]
 		});
 	}
-	var z = String(req.body.b) + String(req.body.g);
-	var string = zodiac[z].split('注意事項：')
-
-	string[0] = string[0].replace('解析：', '')
-	res.render('zodiac', {
-		resolve: string[0],
-		notice: string[1]
-	});
 });
 
 var zodiac = {

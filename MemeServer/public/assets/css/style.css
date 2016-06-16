@@ -282,6 +282,7 @@ header{
 
 .default {
 	background:#ff9999;
+	height:80px;
 	border-bottom:1px solid transparent;
 	opacity: 0.8;
 }
