@@ -111,7 +111,7 @@ iframe, embed, object {
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 100; overflow: hidden;
+    padding-top: 30px; height: 0; overflow: hidden;
 }
  
 .video-container iframe,
@@ -119,9 +119,10 @@ iframe, embed, object {
 .video-container embed {
     position: absolute;
     top: 0;
-    left: 24%;
-    width: 50%;
-    height: 50%;
+    left: 50%;
+    
+    width: 75%;
+    height: 75%;
 }
 blockquote {
   display: inline-block;
@@ -407,6 +408,41 @@ ul.social-profile li a:hover {
 	color:#333;
 }
 
+.black-15 { background: url(https://github.com/mccambridge/tubular/blob/master/media/black-15-trans.png); color: #000; padding: 4px 12px; margin: 24px 0; }
+.black-35 { background: url(https://github.com/mccambridge/tubular/blob/master/media/black-35-trans.png); color: #000; padding: 4px 12px; margin: 24px 0; }
+.black-50 { background: url(https://github.com/mccambridge/tubular/blob/master/media/black-50-trans.png); color: #000; padding: 4px 12px; margin: 24px 0; }
+.black-65 { background: url(https://github.com/mccambridge/tubular/blob/master/media/black-65-trans.png); color: #000; padding: 4px 12px; margin: 24px 0; }
+.black-85 { background: url(https://github.com/mccambridge/tubular/blob/master/media/black-85-trans.png); color: #000; padding: 4px 12px; margin: 24px 0; }
+.buttonpink {
+   background: #302f42;
+   background: -webkit-gradient(linear, left top, left bottom, from(#302f42), to(#302f42));
+   background: -webkit-linear-gradient(top, #302f42, #302f42);
+   background: -moz-linear-gradient(top, #302f42, #302f42);
+   background: -ms-linear-gradient(top, #302f42, #302f42);
+   background: -o-linear-gradient(top, #302f42, #302f42);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 33px;
+   -moz-border-radius: 33px;
+   border-radius: 33px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 16px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;;
+   }
+.buttonpink:hover {
+   border-top-color: #302f42;
+   background: #302f42;
+   color: #fff;
+   }
+.buttonpink:active {
+   border-top-color: #302f42;
+   background: #302f42;
+   }
 
 /* ==== divider ==== */
 .solid_line {

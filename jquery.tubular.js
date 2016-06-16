@@ -9,7 +9,7 @@
 |* Sean */
 
 // default params
-var videoWidth = 853; // needed a default value -- this is overwritten almost immediately
+var videoWidth = 200; // needed a default value -- this is overwritten almost immediately
 var videoRatio = 16/9; // either 4/3 or 16/9 -- tweak as needed
 var defaultDiv = 'wrapper';
 
