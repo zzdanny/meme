@@ -13,8 +13,8 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "mongoose": "lastest",
-    "mongoose-timestamp": "lastest",
-    "fbgraph": "lastest"
+    "mongoose": "~4.5.0",
+    "mongoose-timestamp": "~0.5.0",
+    "fbgraph": "~1.2.0"
   }
 }
