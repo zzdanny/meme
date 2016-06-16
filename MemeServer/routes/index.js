@@ -2,7 +2,6 @@ var express = require('express');
 var mongoose = require('mongoose');
 var timestamps = require('mongoose-timestamp');
 var graph = require('fbgraph');
-var passport = require('passport');
 
 var router = express.Router();
 var Schema = mongoose.Schema;
