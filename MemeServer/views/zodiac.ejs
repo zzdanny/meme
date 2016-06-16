@@ -10,15 +10,14 @@
 		<link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
 		<!-- jQuery (Bootstrap 所有外掛均需要使用) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="swfobject.js"></script>
-		<script type="text/javascript" src="jquery.tubular.js"></script>
+		<script type="text/javascript" src="assets/js/swfobject.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.tubular.js"></script>
 		
 		<!--Bootstrap -->
 		<!-- 最新編譯和最佳化的 CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<!-- 選擇性佈景主題 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
 		<!-- 最新編譯和最佳化的 JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="assets/css/slippry.css">
@@ -29,87 +28,77 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<script src="assets/js/modernizr.custom.js"></script>
-			<script type="text/javascript">
-	$(function(){
+		<script type="text/javascript">
+		$(function(){
 		// 載入 Youtube 影片當背景圖片
 		$('body').tubular('2dwjlBRu24k', 'wrapper');
 		// 播放/暫停
 		$('#videoPause').click(function() {
-			if ($(this).hasClass('videoPaused')) {
-				ytplayer.playVideo();
-				$(this).removeClass('videoPaused');
-			} else {
-				ytplayer.pauseVideo();
-				$(this).addClass('videoPaused');
-			}
-			return false;
+		if ($(this).hasClass('videoPaused')) {
+			ytplayer.playVideo();
+			$(this).removeClass('videoPaused');
+		} else {
+			ytplayer.pauseVideo();
+			$(this).addClass('videoPaused');
+		}
+		return false;
 		});
 		
 		// 靜音/取消靜音
 		$('#videoMute').click(function() {
-			if ($(this).hasClass('videoMute')) {
-				ytplayer.mute();
-				$(this).removeClass('videoMute');
-			} else {
-				ytplayer.unMute();
-				$(this).addClass('videoMute');
-			}
-			return false;
+		if ($(this).hasClass('videoMute')) {
+			ytplayer.mute();
+			$(this).removeClass('videoMute');
+		} else {
+			ytplayer.unMute();
+			$(this).addClass('videoMute');
+		}
+		return false;
 		});
 		
 		// 停止播放影片及載入
 		$('#videoStop').click(function() {
-			ytplayer.stopVideo();
-			ytplayer.clearVideo();
-			$('#yt-container').hide();
-			return false;
+		ytplayer.stopVideo();
+		ytplayer.clearVideo();
+		$('#yt-container').hide();
+		return false;
 		});
-
 		$("#peidui").hide();
 		$("#btn2").click(function(){
-  			$("#peidui").show();
-  		});
-
-	});
-</script>
-
-
-<style type="text/css">
-	body {
-		margin: 0;
-		padding: 0;
-	}
-	a {
-		color: #fff;
-		font-size: 60px;
-		text-decoration: underline;
-	}
-
-	div#video-cover {
-		 background: url(black-65-trans.png);
-	}
-
-	#video-controls {
-		position: absolute;
-		left: 200px;
-		top: 200px;
-		width: 500px;
-		color: #fff;
-		font-size: 24px;
-		padding: 5px;
-		background: url(black-65-trans.png);
-	}
-	#video-controls a {
-		color: #fff;
-		text-decoration: underline;
-	}
-</style>
-
+		$("#peidui").show();
+		});
+		});
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				color: #fff;
+				font-size: 60px;
+				text-decoration: underline;
+			}
+			div#video-cover {
+				background: url(assets/img/black-65-trans.png);
+			}
+			#video-controls {
+				position: absolute;
+				left: 200px;
+				top: 200px;
+				width: 500px;
+				color: #fff;
+				font-size: 24px;
+				padding: 5px;
+				background: url(black-65-trans.png);
+			}
+			#video-controls a {
+				color: #fff;
+				text-decoration: underline;
+			}
+		</style>
 	</head>
-
 	<body>
-		
-			
 		<header>
 			<div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
 				<div class="container">
@@ -120,7 +109,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.html">MEME</a>
+						<a class="navbar-brand" href="/">MEME</a>
 					</div>
 					<div class="navigation">
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
@@ -133,85 +122,37 @@
 					</div>
 				</div>
 			</div>
-
 		</header>
-		
 		<section id="intro" class="section" >
-
-
-	<div id="wrapper">	
-				
-					
-		<section id="about" class="black-85">
-			<div class="container" >
-		</br>
-			</br>
-	
-		</br>
-	
-		</br>
-
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
+			<div id="wrapper">
+				<section id="about" class="black-85">
+					<div class="container" >
 						</br>
 						</br>
-
-
-							<p style="color:#fff;font-size:40px" >
-				
-							就讓我們開始吧!
-				
-							</p>
+						
 						</br>
+						
 						</br>
-
-						<button class="buttonpink" id="btn2">START!</button>
-
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2">
+								</br>
+								</br>
+								<p style="color:#fff;font-size:40px" >
+									
+									就讓我們開始吧!
+									
+								</p>
+								</br>
+								</br>
+								<button class="buttonpink" onclick="window.location.href='/'">RESTART!</button>
+							</div>
 						</div>
 					</div>
-				</div>
-					<form action="/peidui_xingzuo.php" method="POST" name="peidui" id="peidui">
-				<p>				
-				 <div style="color:#fff;"> 男生姓名: </div>
-				 <input type="text" name="boyname" />
-	              <select name="B" class="ximizi_select">
-                      <option value="" selected="selected">男生星座</option>
-                      <option value="a">白羊座</option>
-                      <option value="b">金牛座</option>
-                      <option value="c">雙子座</option>
-                      <option value="d">巨蟹座</option>
-                      <option value="e">獅子座</option>
-                      <option value="f">處女座</option>
-                      <option value="g">天秤座</option>
-                      <option value="h">天蝎座</option>
-                      <option value="i">射手座</option>
-                      <option value="j">摩羯座</option>
-                      <option value="k">水瓶座</option>
-                      <option value="l">雙魚座</option>
-                    </select>
-                <div style="color:#fff;"> 女生姓名: </div><input type="text" name="girlname" />
-                    <select name="G" class="ximizi_select">
-                      <option value="" selected="selected">女生星座</option>
-                      <option value="a">白羊座</option>
-                      <option value="b">金牛座</option>
-                      <option value="c">雙子座</option>
-                      <option value="d">巨蟹座</option>
-                      <option value="e">獅子座</option>
-                      <option value="f">處女座</option>
-                      <option value="g">天秤座</option>
-                      <option value="h">天蝎座</option>
-                      <option value="i">射手座</option>
-                      <option value="j">摩羯座</option>
-                      <option value="k">水瓶座</option>
-                      <option value="l">雙魚座</option>
-                    </select>
-                </br>
-            </br>
-			<input type="submit" name="Submit" class="submit" value="GO!">
-				</p>
-				</form>
-
-
+					<%= resolve %>
+					<br/>
+					<br/>
+					<br/>
+					<%= notice %>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="aligncenter">
@@ -223,7 +164,7 @@
 							</div>
 						</div>
 					</div>
-				</div> 
+				</div>
 			</div>
 		</footer>
 		<a href="#" class="scrollup"><i class="fa fa-angle-up fa-2x"></i></a>
@@ -250,7 +191,6 @@
 		viewportFactor : 0.2
 		} );
 		</script>
-	
 		<script src="assets/js/custom.js"></script>
-		</body>
-	</html>
+	</body>
+</html>

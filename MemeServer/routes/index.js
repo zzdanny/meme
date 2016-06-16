@@ -7,9 +7,7 @@ var Schema = mongoose.Schema;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', {
-		title: 'Express'
-	});
+	res.render('index');
 });
 
 var MatchSchema = new Schema({
@@ -21,18 +19,20 @@ MatchSchema.plugin(timestamps);
 var Match = mongoose.model('Match', MatchSchema);
 
 router.post('/zodiac', function(req, res, next) {
-	var match = new Match({
-		boyName: req.body.boyName,
-		girlName: req.body.girlName
-	});
+	if (req.body.boyName != undefined || req.body.girlName == undefined) {
+		var match = new Match({
+			boyName: req.body.boyName,
+			girlName: req.body.girlName
+		});
 
-	match.save(function(err) {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(req.body.boyName + ' & ' + req.body.girlName);
-		}
-	});
+		match.save(function(err) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(req.body.boyName + ' & ' + req.body.girlName);
+			}
+		});
+	}
 
 	if (req.body.b == undefined || req.body.b == undefined) {
 		res.render('index', {
@@ -43,7 +43,7 @@ router.post('/zodiac', function(req, res, next) {
 	var string = zodiac[z].split('注意事項：')
 
 	string[0] = string[0].replace('解析：', '')
-	res.render('index', {
+	res.render('zodiac', {
 		resolve: string[0],
 		notice: string[1]
 	});
